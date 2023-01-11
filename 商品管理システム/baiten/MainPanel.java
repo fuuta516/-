@@ -21,7 +21,7 @@ public class MainPanel extends JPanel {
 		
 		JLabel lblNewLabel = new JLabel("担当者");
 		
-		JLabel lblNewLabel_1 = new JLabel("顧客名l");
+		JLabel lblNewLabel_1 = new JLabel("顧客名");
 		
 		JComboBox comboBox_1 = new JComboBox();
 		
