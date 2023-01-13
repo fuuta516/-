@@ -77,10 +77,10 @@ public class CustPanel extends JPanel {
 
 		//性別を選択(ラジオボタン)
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("男");
-		contentPane.add(rdbtnNewRadioButton);
+//		contentPane.add(rdbtnNewRadioButton);
 
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("女");
-		contentPane.add(rdbtnNewRadioButton_1);
+//		contentPane.add(rdbtnNewRadioButton_1);
 
 		//グループ化(ラジオボタン)
 		bg = new ButtonGroup();
