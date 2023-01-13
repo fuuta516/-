@@ -94,17 +94,17 @@ public class CustPanel extends JPanel {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				DbOperation db = new DbOperation();
-				String nyuugaku = textField.getText();
-				String name =textField_1.getText();
+				String ad = textField.getText();
+				String cust =textField_1.getText();
 
 				boolean status = rdbtnNewRadioButton.isSelected();
 				boolean status2 = rdbtnNewRadioButton_1.isSelected();
-
+				String gen = "";
 				if(status) {
-					String seibetu="男性";
+					gen="男性";
 
 				}else if(status2) {
-					String seibetu="女性";
+					gen="女性";
 				}
 
 				int id=3;
@@ -183,9 +183,9 @@ public class CustPanel extends JPanel {
 		//リストでループ処理
 		for(int i=0; i<cust1.size(); i++) {
 			ob[i][0] = cust1.get(i).getId();
-			ob[i][1] = cust1.get(i).get();
-			ob[i][2] = cust1.get(i).get();
-			ob[i][3] = cust1.get(i).get();
+			ob[i][1] = cust1.get(i).getAd();
+			ob[i][2] = cust1.get(i).getCust();
+			ob[i][3] = cust1.get(i).getGen();
 
 		}
 
