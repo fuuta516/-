@@ -264,7 +264,7 @@ public class DbOperation {
 	}
 
 	public void dbCustIn(int id,String ad,String cust,String gen){//顧客名追加
-		String sql = "insert into 商品一覧(共通id,入学年月,顧客名,性別) values (?,?,?,?)";
+		String sql = "insert into 顧客名管理(共通id,入学年月,顧客名,性別) values (?,?,?,?)";
 
 		try(Connection con=DriverManager.getConnection(url, user, password );
 				PreparedStatement pstmt = con.prepareStatement(sql); ) {
