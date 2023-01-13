@@ -39,7 +39,7 @@ public class CustPanel extends JPanel {
 	String[] column = {"共通ID","入学年月","購入者名","性別"};//[列]
 	private JTextField textField_3;
 
-
+	DefaultTableModel tablemodel;
 	/**
 	 * Create the panel.
 	 */
@@ -47,7 +47,7 @@ public class CustPanel extends JPanel {
 		
 		//リストの取得
 		aaaaa = DbCusta();
-		DefaultTableModel tablemodel = new DefaultTableModel(aaaaa,column);
+		tablemodel = new DefaultTableModel(aaaaa,column);
 		table = new JTable(tablemodel);
 		table.setFont(new Font("メイリオ", Font.PLAIN, 12));
 		
@@ -68,12 +68,12 @@ public class CustPanel extends JPanel {
 		//入学年月を入力
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
-		String nyuugaku = textField_2.getText();
+		//String nyuugaku = textField_2.getText();
 
 		//名前を入力
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		String name = textField_1.getText();
+		//String name = textField_1.getText();
 
 		//性別を選択(ラジオボタン)
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("男");
@@ -94,22 +94,25 @@ public class CustPanel extends JPanel {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				DbOperation db = new DbOperation();
-				String ad = textField.getText();
+				String ad = textField_2.getText();
 				String cust =textField_1.getText();
 
 				boolean status = rdbtnNewRadioButton.isSelected();
 				boolean status2 = rdbtnNewRadioButton_1.isSelected();
 				String gen = "";
+				
 				if(status) {
-					gen="男性";
+					gen="男";
 
 				}else if(status2) {
-					gen="女性";
+					gen="女";
 				}
 
 				int id=3;
 
 				db.dbCustIn(id,ad,cust,gen);
+				Object[] a = {id,ad,cust,gen};
+				tablemodel.addRow(a);
 			}
 		});
 		
