@@ -76,7 +76,7 @@ public class DbOperation {
 		return a;
 	}
 	
-	public ArrayList<DbInfoall> dbGoodsonly() {//商品一覧表示
+	public ArrayList<DbInfoall> dbGoodsonly() {//商品のみ表示
 
 		ArrayList<DbInfoall> a = new ArrayList<>();
 
@@ -199,7 +199,7 @@ public class DbOperation {
 	}
 
 	public void dbStockIn(int id,String gname,int stock){//在庫数追加
-		String sql = "insert into 商品一覧(共通id,商品名,在庫数) values (?,?,?)";
+		String sql = "insert into 在庫数(共通id,商品名,在庫数) values (?,?,?)";
 
 		try(Connection con=DriverManager.getConnection(url, user, password );
 				PreparedStatement pstmt = con.prepareStatement(sql); ) {
