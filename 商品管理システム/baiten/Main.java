@@ -44,7 +44,7 @@ public class Main extends JFrame {
 		tabbedpane = new JTabbedPane();
 		JPanel tabPanel1 = new MainPanel();
 		JPanel tabPanel2 = new GoodsPanel();
-		JPanel tabPanel3 = new UserPanel();
+		JPanel tabPanel3 = new CustPanel();
 		JPanel tabPanel4 = new SalesPanel();
 		
 		
